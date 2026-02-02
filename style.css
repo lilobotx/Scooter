@@ -1,0 +1,98 @@
+*{
+  /*-webkit-text-stroke: gray 0.5px;*/
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.main {
+background-image: url(Quad.png);
+background-repeat: repeat;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #00000067;
+  outline: 4px solid #00000042;
+}
+
+ul li {
+  float: left;
+}
+
+.Common{
+text-shadow: 0px 0px 4px white;
+}
+
+.Rare{
+text-shadow: 0px 0px 4px orange, 0px 0px 3px orange;
+}
+
+.Epic{
+text-shadow: 0px 0px 4px rgb(179, 66, 255), 0px 0px 3px rgb(179, 66, 255), 0px 0px 5px rgb(179, 66, 255);
+}
+
+.Legendary{
+text-shadow: -4px 2px 4px rgb(0, 255, 200), 4px -2px 4px rgb(255, 0, 170);
+}
+
+ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #ffffff7a;
+}
+
+table, th, td {
+    border: 2px solid #ffffff85; 
+    margin: auto;
+    border-collapse: collapse;
+}
+
+th {
+  background-color: rgba(0, 0, 0, 0.35);
+  padding: 10px 10px;
+}
+
+td {
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 4px 4px;
+}
+
+td:hover {
+  background-color: rgba(128, 128, 128, 0.25);
+  padding: 4px 4px;
+}
+
+button{
+  background-size: 100%;
+  padding: 10px 40px;
+  border-radius: 1px;
+  font-size: 36px;
+  color: red;
+  border: 5px solid ;
+  background-color: #00000000;
+}
+
+h1 {
+  color: red;
+}
+footer {
+  background-color: rgb(41, 41, 41);
+  display: flex;
+  justify-content: center;
+  margin: -10px;
+  padding: 100px;
+}
+
+footer p{
+  color: white;
+}

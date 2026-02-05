@@ -1,5 +1,4 @@
 *{
-  /*-webkit-text-stroke: gray 0.5px;*/
   color: rgb(0, 0, 0);
   text-align: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -53,7 +52,10 @@ button{
 
 h1 {
   color: red;
+  font-size: 64px;
+  -webkit-text-stroke: rgb(0, 0, 0) 0.1px;
 }
+
 footer {
   background-color: rgba(41, 41, 41, 0.952);
   display: flex;
@@ -68,7 +70,38 @@ footer p{
 }
 
 h3{
-  color: #ff0000;
+  color: #752f2f;
   text-wrap: balance;
-  
+  -webkit-text-stroke: rgb(0, 0, 0) 0.1px;
+  font-size: 32px;
+}
+
+h2{
+  color: #bd2727;
+  -webkit-text-stroke: rgb(0, 0, 0) 0.1px;
+  font-size: 48px;
+}
+
+label{
+  color: #000000;
+  font-size: 24px;
+}
+
+h1 a{
+  color: red;
+  text-decoration: none;
+  outline: #ff0000 5px solid;
+  padding: 4px 10px;
+  -webkit-text-stroke: rgba(0, 0, 0, 0) 0px;
+}
+
+#coolvertisement {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+input{
+  padding: 10px;
+  font-size: 24px;
 }

@@ -53,7 +53,7 @@ button{
 h1 {
   color: red;
   font-size: 64px;
-  -webkit-text-stroke: rgb(0, 0, 0) 0.1px;
+  /*-webkit-text-stroke: rgb(0, 0, 0) 1px;*/
 }
 
 footer {
@@ -72,13 +72,13 @@ footer p{
 h3{
   color: #752f2f;
   text-wrap: balance;
-  -webkit-text-stroke: rgb(0, 0, 0) 0.1px;
+  /*-webkit-text-stroke: rgb(0, 0, 0) 1px;*/
   font-size: 32px;
 }
 
 h2{
   color: #bd2727;
-  -webkit-text-stroke: rgb(0, 0, 0) 0.1px;
+  /*-webkit-text-stroke: rgb(0, 0, 0) 1px;*/
   font-size: 48px;
 }
 
@@ -91,8 +91,8 @@ h1 a{
   color: red;
   text-decoration: none;
   outline: #ff0000 5px solid;
-  padding: 4px 10px;
-  -webkit-text-stroke: rgba(0, 0, 0, 0) 0px;
+  padding: 10px 40px;
+  /*-webkit-text-stroke: rgba(0, 0, 0, 0) 0px;*/
 }
 
 #coolvertisement {

@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="cook.png" type="image/x-icon">
+</head>
+<body class="main">
+    <br>
+    <h1 id="welcome"></h1>
+    <div id="scooterpanel">
+        <div id="buyscooters">
+            <div>
+                <h2>New Pro Scooter!</h2>
+                <button>Buy</button>
+            </div>
+                <div>
+                <h2>Scooter!</h2>
+                <button>Buy</button>
+            </div>
+            <div>
+                <h2>Basic Scooter!</h2>
+                <button>Buy</button>
+            </div>
+        </div>
+    </div>
+    <script> 
+
+        const params = new URLSearchParams(window.location.search);
+        const text = document.getElementById("welcome");
+        let username = params.get('username');
+        if(username){
+            text.textContent = `Welcome ${username}!`;
+        } 
+
+    </script>
+</body>
+</html>

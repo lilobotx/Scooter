@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super F Login</title>
     <link rel="stylesheet" href="style.css">
-    <meta charset="utf-8"/>
     <link rel="shortcut icon" href="cook.png" type="image/x-icon">
 </head>
 <body class="main">
@@ -21,7 +22,7 @@
     <h1>Login</h1>
     <br>
     <br>
-    <form>
+    <form id="login">
         <label for="user">Username:</label><br>
         <input type="text" id="user" name="user" size="50px"><br>
         <br>
@@ -29,6 +30,10 @@
         <br>
         <label for="pass">Password:</label><br>
         <input type="password" id="pass" name="pass" size="50px">
+        <br>
+        <br>
+        <br>
+        <input type="submit" value="submit">
     </form>
     <br>
     <br>
@@ -66,12 +71,33 @@
     <br>
     <br>
     <h2>Super Secrete Confidential Information</h2>
-    <h2>amustardcalf</h2>
+    <h2>newsupermustardcalf</h2>
     <h2>123</h2>
     <footer>
     <div>
     <P>"Copyright Super F®</P>
     </div>
     </footer>
+    <script>
+        let username = null;
+        const form = document.getElementById('login');
+
+        form.addEventListener('submit', function (event){
+            event.preventDefault();
+
+            const user = document.getElementById('user').value;
+            const pass = document.getElementById('pass').value;
+
+            console.log(user + pass);
+
+            if (user == "newsupermustardcalf" && pass == "123") {
+                username = user;
+                window.location.href = `scooter.html?username=${encodeURIComponent(username)}`;
+        }
+        else{
+            alert("Wrong Username or Password!");
+        }
+    });
+    </script>
 </body>
 </html>

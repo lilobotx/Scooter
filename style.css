@@ -47,7 +47,17 @@ button{
   font-size: 36px;
   color: red;
   border: 5px solid ;
-  background-color: #00000000;
+  background-color: #ffffffa1;
+}
+
+button:hover{
+  background-size: 100%;
+  padding: 10px 50px;
+  border-radius: 1px;
+  font-size: 36px;
+  color: rgb(255, 75, 75);
+  border: 5px solid rgb(255, 75, 75);
+  background-color: #d1d1d1a1;
 }
 
 h1 {

@@ -51,13 +51,9 @@ button{
 }
 
 button:hover{
-  background-size: 100%;
-  padding: 10px 50px;
-  border-radius: 1px;
-  font-size: 36px;
-  color: rgb(255, 75, 75);
-  border: 5px solid rgb(255, 75, 75);
-  background-color: #d1d1d1a1;
+  animation-duration: 1s;
+  animation-name: Buttonanimationstore;
+  animation-fill-mode: forwards;
 }
 
 h1 {
@@ -116,17 +112,56 @@ input{
   font-size: 24px;
 }
 
-#buyscooters {
+#buyscooters, #rentscooters {
+  box-sizing: border-box;
   display: flex;
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 0;
-  flex-direction: row;
-  justify-content: center;
   gap: 50px;
+  flex-wrap: wrap;
 }
 
 #scooterslot {
-  outline: #ff0000 5px solid;
-  padding:  10px;
+  outline: rgb(121, 0, 0) 5px solid;
+  flex: 1 1 100px;
+  flex-direction: column;
+  min-width: 100px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  border-radius: 2px;
+  background-color: #ffffffad;
+  background-image: url(Quad2.png);
+  background-repeat: repeat;
+}
+
+#scooterslot > h3 {
+color: rgb(121, 0, 0);
+text-shadow: rgb(182, 36, 36) 2px 2px 0px;
+}
+
+#scooterslot > button {
+background-color: #0000003b;
+color: rgb(121, 0, 0);
+}
+
+#scooterslot > button:hover {
+animation-duration: 1s;
+animation-name: Buttonanimationstore;
+animation-fill-mode: forwards;
+}
+
+#scooterslot > p {
+color: rgb(83, 0, 0);
+text-shadow: rgb(182, 36, 36) 1px 1px 0px;
+}
+
+@keyframes Buttonanimation {
+  0%{}
+  100% {  background-size: 100%; padding: 10px 50px; border-radius: 1px; font-size: 36px; color: rgb(255, 75, 75); border: 5px solid rgb(255, 75, 75); background-color: #d1d1d1a1;}
+}
+
+@keyframes Buttonanimationstore {
+  0%{}
+  100% {background-color: #00000062; color: rgb(83, 0, 0); border: rgb(83, 0, 0) 4px dashed; padding: 10px 50px;}
 }

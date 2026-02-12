@@ -1,55 +1,62 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super F Store</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="cook.png" type="image/x-icon">
-</head>
-<body class="main">
-    <br>
-    <h1 id="welcome"></h1>
-    <div id="scooterpanel">
-        <h2>Purchase</h2>
-        <div id="buyscooters">
-            <div id="scooterslot">
-                <h3>New Pro Scooter!</h3>
-                <button>Buy</button>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Super F Store</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="cook.png" type="image/x-icon">
+    </head>
+    <body class="main">
+        <br>
+        <h1 id="welcome"></h1>
+        <div id="scooterpanel">
+            <h2>Purchase</h2>
+            <div id="buyscooters">
+                <div id="scooterslot">
+                    <h3>New Pro Scooter!</h3>
+                    <p>5000$</p>
+                    <button>Buy</button>
+                </div>
+                <div id="scooterslot">
+                    <h3>Scooter!</h3>
+                    <p>2400$</p>
+                    <button>Buy</button>
+                </div>
+                <div id="scooterslot">
+                    <h3>Basic Scooter!</h3>
+                    <p>550$</p>
+                    <button>Buy</button>
+                </div>
             </div>
-            <div id="scooterslot">
-                <h3>Scooter!</h3>
-                <button>Buy</button>
-            </div>
-            <div id="scooterslot">
-                <h3>Basic Scooter!</h3>
-                <button>Buy</button>
+            <h2>Rent</h2>
+            <div id="rentscooters">
+                <div id="scooterslot">
+                    <h3>New Pro Scooter!</h3>
+                    <p>100$/Day</p>
+                    <button>Rent</button>
+                </div>
+                <div id="scooterslot">
+                    <h3>Scooter!</h3>
+                    <p>60$/Day</p>
+                    <button>Rent</button>
+                </div>
+                <div id="scooterslot">
+                    <h3>Basic Scooter!</h3>
+                    <p>12$/Day</p>
+                    <button>Rent</button>
+                </div>
             </div>
         </div>
-        <h2>Purchase</h2>
-        <div id="rentscooters">
-            <div id="scooterslot">
-                <h3>New Pro Scooter!</h3>
-                <button>Rent</button>
-            </div>
-            <div id="scooterslot">
-                <h3>Scooter!</h3>
-                <button>Rent</button>
-            </div>
-            <div id="scooterslot">
-                <h3>Basic Scooter!</h3>
-                <button>Rent</button>
-            </div>
-        </div>
-    </div>
-    <script> 
+        <script> 
 
-        const params = new URLSearchParams(window.location.search);
-        const text = document.getElementById("welcome");
-        let username = params.get('username');
-        if(username){
-            text.textContent = `Welcome ${username}!`;
-        } 
+            const params = new URLSearchParams(window.location.search);
+            const text = document.getElementById("welcome");
+            let username = params.get('username');
 
-    </script>
-</body>
+            if(username){
+                text.textContent = `Welcome ${username}!`;
+            } 
+
+        </script>
+    </body>
 </html>

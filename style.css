@@ -5,8 +5,9 @@
 }
 
 .main {
-background-image: url(Quad.png);
-background-repeat: repeat;
+  background-image: url(Quad.png);
+  background-repeat: repeat;
+  animation: slide 10s linear infinite;
 }
 
 ul {
@@ -14,8 +15,10 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #0000000e;
-  outline: 4px solid #ff0000;
+  background-image: url(Quad2.png);
+  background-repeat: repeat;
+  animation: slide 15s linear infinite;
+  outline: 4px solid #8b4444;
 }
 
 ul li {
@@ -24,10 +27,11 @@ ul li {
 
 ul li a {
   display: block;
-  color: rgb(255, 0, 0);
+  color: rgb(139, 65, 65);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  text-shadow: rgba(255, 255, 255, 0.418) 0px 0px 2px;
 }
 
 ul li a:hover {
@@ -133,6 +137,7 @@ input{
   background-color: #ffffffad;
   background-image: url(Quad2.png);
   background-repeat: repeat;
+  animation: slide 15s linear infinite;
 }
 
 #scooterslot > h3 {
@@ -146,7 +151,7 @@ color: rgb(121, 0, 0);
 }
 
 #scooterslot > button:hover {
-animation-duration: 1s;
+animation-duration: 0.5s;
 animation-name: Buttonanimationstore;
 animation-fill-mode: forwards;
 }
@@ -163,5 +168,14 @@ text-shadow: rgb(182, 36, 36) 1px 1px 0px;
 
 @keyframes Buttonanimationstore {
   0%{}
-  100% {background-color: #00000062; color: rgb(83, 0, 0); border: rgb(83, 0, 0) 4px dashed; padding: 10px 50px;}
+  100% {background-color: #00000062; color: rgb(83, 0, 0); padding: 10px 50px;}
+}
+
+@keyframes slide {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -256px -256px; 
+  }
 }

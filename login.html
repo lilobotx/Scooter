@@ -8,7 +8,6 @@
         <link rel="shortcut icon" href="cook.png" type="image/x-icon">
     </head>
     <body class="main">
-            <!--<div class="bg"></div><!-->
         <header>
             <div class="navigation_operation">
                 <nav>
@@ -28,12 +27,12 @@
         <br>
         <form id="login">
             <label for="user">Username:</label><br>
-            <input type="text" id="user" name="user" size="50px"><br>
+            <input class="textinput" type="text" id="user" name="user"><br>
             <br>
             <br>
             <br>
             <label for="pass">Password:</label><br>
-            <input type="password" id="pass" name="pass" size="50px">
+            <input class="textinput" type="password" id="pass" name="pass">
             <br>
             <br>
             <br>
@@ -75,7 +74,7 @@
         <br>
         <br>
         <h2>Super Secrete Confidential Information</h2>
-        <h2>newsupermustardcalf</h2>
+        <h2>mustard</h2>
         <h2>123</h2>
         <footer>
             <div>
@@ -94,7 +93,7 @@
 
                 console.log(user + pass);
 
-                if (user == "newsupermustardcalf" && pass == "123") {
+                if (user == "mustard" && pass == "123") {
                     username = user;
                     window.location.href = `scooter.html?username=${encodeURIComponent(username)}`;
                 }

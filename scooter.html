@@ -30,17 +30,20 @@
                 <div id="scooterslot">
                     <h3>New Pro Scooter!</h3>
                     <p>5000$</p>
-                    <button>Buy</button>
+                    <button id="buypro">Buy</button>
+                    <p class="underdog">Our latest Pro Scooter with Gasoline powered Rocket Propulsion and Air Compression Technology.</p>
                 </div>
                 <div id="scooterslot">
                     <h3>Scooter!</h3>
                     <p>2400$</p>
-                    <button>Buy</button>
+                    <button id="buy">Buy</button>
+                    <p class="underdog">A simpler scooter with electric driving features.</p>
                 </div>
                 <div id="scooterslot">
                     <h3>Basic Scooter!</h3>
                     <p>550$</p>
-                    <button>Buy</button>
+                    <button id="buybasic">Buy</button>
+                    <p class="underdog">A basic reliable Scooter without any motors.</p>
                 </div>
             </div>
             <h2>Rent</h2>
@@ -48,29 +51,45 @@
                 <div id="scooterslot">
                     <h3>New Pro Scooter!</h3>
                     <p>100$/Day</p>
-                    <button>Rent</button>
+                    <button id="rentpro">Rent</button>
+                    <p class="underdog">Our latest Pro Scooter with Gasoline powered Rocket Propulsion and Air Compression Technology.</p>
                 </div>
                 <div id="scooterslot">
                     <h3>Scooter!</h3>
                     <p>60$/Day</p>
-                    <button>Rent</button>
+                    <button id="rent">Rent</button>
+                    <p class="underdog">A simpler scooter with electric driving features.</p>
                 </div>
                 <div id="scooterslot">
                     <h3>Basic Scooter!</h3>
                     <p>12$/Day</p>
-                    <button>Rent</button>
+                    <button id="rentbasic">Rent</button>
+                    <p class="underdog">A basic reliable Scooter without any motors.</p>
                 </div>
             </div>
         </div>
+        <footer>
+            <div>
+                <P>"Copyright Super F®</P>
+            </div>
+        </footer>
         <script> 
 
             const params = new URLSearchParams(window.location.search);
             const text = document.getElementById("welcome");
+            const buypro = document.getElementById("buypro");
             let username = params.get('username');
+            let Boughtpro = false;
 
             if(username){
                 text.textContent = `Welcome ${username}!`;
-            } 
+            }
+
+            buypro.addEventListener('click', function event(){
+
+                    buypro.textContent = "Bought!";
+
+            });
 
         </script>
     </body>

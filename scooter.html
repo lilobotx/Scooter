@@ -26,18 +26,21 @@
         <h1 id="welcome"></h1>
         <div id="scooterpanel">
             <h2>Purchase</h2>
+            <H3 id="wallet"></H3>
+            <br>
+            <br>
             <div id="buyscooters">
                 <div id="scooterslot">
-                    <h3>New Pro Scooter!</h3>
+                    <h3>Super F Scooter!</h3>
                     <p>5000$</p>
                     <button id="buypro">Buy</button>
-                    <p class="underdog">Our latest Pro Scooter with Gasoline powered Rocket Propulsion and Air Compression Technology.</p>
+                    <p class="underdog">Our latest Pro Scooter with Gasoline powered Rocket Propulsion and Air Compression Technology. Up to 85km/h.</p>
                 </div>
                 <div id="scooterslot">
-                    <h3>Scooter!</h3>
+                    <h3>Super Scooter!</h3>
                     <p>2400$</p>
                     <button id="buy">Buy</button>
-                    <p class="underdog">A simpler scooter with electric driving features.</p>
+                    <p class="underdog">A simpler scooter with electric driving features. Up to 50km/h.</p>
                 </div>
                 <div id="scooterslot">
                     <h3>Basic Scooter!</h3>
@@ -49,16 +52,16 @@
             <h2>Rent</h2>
             <div id="rentscooters">
                 <div id="scooterslot">
-                    <h3>New Pro Scooter!</h3>
+                    <h3>Super F Scooter!</h3>
                     <p>100$/Day</p>
                     <button id="rentpro">Rent</button>
-                    <p class="underdog">Our latest Pro Scooter with Gasoline powered Rocket Propulsion and Air Compression Technology.</p>
+                    <p class="underdog">Our latest Pro Scooter with Gasoline powered Rocket Propulsion and Air Compression Technology. Up to 85km/h.</p>
                 </div>
                 <div id="scooterslot">
-                    <h3>Scooter!</h3>
+                    <h3>Super Scooter!</h3>
                     <p>60$/Day</p>
                     <button id="rent">Rent</button>
-                    <p class="underdog">A simpler scooter with electric driving features.</p>
+                    <p class="underdog">A simpler scooter with electric driving features. Up to 50km/h.</p>
                 </div>
                 <div id="scooterslot">
                     <h3>Basic Scooter!</h3>
@@ -70,16 +73,47 @@
         </div>
         <footer>
             <div>
+                <p id="rentprodate"></p>
+                <p id="rentdate"></p>
+                <p id="rentbasicdate"></p>
+                <p id="rentcalc"></p>
+            </div>
+            <div>
                 <P>"Copyright Super F®</P>
             </div>
         </footer>
         <script> 
 
             const params = new URLSearchParams(window.location.search);
+            
             const text = document.getElementById("welcome");
+            const wallet = document.getElementById("wallet");
             const buypro = document.getElementById("buypro");
+            const buy = document.getElementById("buy");
+            const buybasic = document.getElementById("buybasic");
+            const rentpro = document.getElementById("rentpro");
+            const rent = document.getElementById("rent");
+            const rentbasic = document.getElementById("rentbasic");
+            const rentcalc = document.getElementById("rentcalc");
+            const rentprodate = document.getElementById("rentprodate");
+            const rentdate = document.getElementById("rentdate");
+            const rentbasicdate = document.getElementById("rentbasicdate");
+            const timerented = document.getElementById("datetime");
+
             let username = params.get('username');
             let Boughtpro = false;
+            let Bought = false;
+            let Boughtbasic = false;
+            let Rentedpro = false;
+            let Rented = false;
+            let Rentedbasic = false;
+            let credits = 10000;
+            let rentcostcalc = 0;
+            let rentprotimeelapsed = 0;
+            let renttimeelapsed = 0;
+            let rentbasictimeelapsed = 0;
+
+            wallet.textContent = "Wallet: " + credits + "$";
 
             if(username){
                 text.textContent = `Welcome ${username}!`;
@@ -87,9 +121,78 @@
 
             buypro.addEventListener('click', function event(){
 
+                if(Boughtpro == false){
+                    Boughtpro = true;
                     buypro.textContent = "Bought!";
+                    credits -= 5000;
+                    wallet.textContent = "Wallet: " + credits + "$";
+                }
+                else{
+                    console.log("Already Bought")
+                }
 
             });
+
+            buy.addEventListener('click', function event(){
+
+                if(Bought == false){
+                    Bought = true;
+                    buy.textContent = "Bought!";
+                    credits -= 2400;
+                    wallet.textContent = "Wallet: " + credits + "$";
+                }
+                else{
+                    console.log("Already Bought")
+                }
+
+            });
+
+            buybasic.addEventListener('click', function event(){
+
+                if(Boughtbasic == false){
+                    Boughtbasic = true;
+                    buybasic.textContent = "Bought!";
+                    credits -= 550;
+                    wallet.textContent = "Wallet: " + credits + "$";
+                }
+                else{
+                    console.log("Already Bought")
+                }
+
+            });
+
+            rentpro.addEventListener('click', function event(){
+
+                if(Rentedpro == false){
+                    Rentedpro = true;
+                    rentpro.textContent = "Rented!";
+                    credits -= 100;
+                    wallet.textContent = "Wallet: " + credits + "$";
+                    rentcostcalc -= 100;
+                    rentcalc.textContent = "Daily Rent Calculation: " + -1*(rentcostcalc) + "$ / Day.";
+
+                    const PayRentPro = setInterval(function() {
+                            credits -= 100;
+                            wallet.textContent = "Wallet: " + credits + "$";
+                        }, 86400000);
+                }
+                else{
+                    clearInterval(PeyRentPro);
+                    Rentedpro = false;
+                    rentpro.textContent = "Rent";
+                    rentcostcalc += 100;
+                    rentcalc.textContent = "Daily Rent Calculation: " + -1*(rentcostcalc) + "$ / Day.";
+                }
+
+            });
+
+            const DateAndTime = setInterval(function() {
+                const date = new Date();
+                if(Rentedpro == true) {
+                    rentprodate.textContent = "Rented Super F Scooter on " + date.toLocaleDateString() + ". Rent Time Elapsed: " + (Math.trunc(rentprotimeelapsed/60))+ "m " + (rentprotimeelapsed % 60) + "s.";
+                    rentprotimeelapsed++;
+                }
+            }, 1000);
 
         </script>
     </body>

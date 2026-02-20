@@ -50,6 +50,7 @@
                 </div>
             </div>
             <h2>Rent</h2>
+            <h3>Can only rent one scooter at a time.</h3>
             <div id="rentscooters">
                 <div id="scooterslot">
                     <h3>Super F Scooter!</h3>
@@ -169,62 +170,77 @@
 
             rentpro.addEventListener('click', function event(){
 
-                if(Rentedpro == false){
-                    RentproStartDate = new Date();
-                    Rentedpro = true;
-                    rentpro.textContent = "Rented!";
-                    credits -= 100;
-                    wallet.textContent = "Wallet: " + credits + "$";
-                    rentcostcalc -= 100;
-                    rentcalc.textContent = "Daily Rent Calculation: " + -1*(rentcostcalc) + "$ / Day.";
+                if(Rentedbasic != true && Rented != true){
+                    if(Rentedpro == false){
+                        RentproStartDate = new Date();
+                        Rentedpro = true;
+                        rentpro.textContent = "Rented!";
+                        rent.textContent = "Unavailable";
+                        rentbasic.textContent = "Unavailable";
+                        credits -= 100;
+                        wallet.textContent = "Wallet: " + credits + "$";
+                        rentcostcalc -= 100;
+                        rentcalc.textContent = "Daily Rent Calculation: " + -1*(rentcostcalc) + "$ / Day.";
+                    }
+                    else{
+                        Rentedpro = false;
+                        rentpro.textContent = "Rent";
+                        rent.textContent = "Rent";
+                        rentbasic.textContent = "Rent";
+                        rentcostcalc += 100;
+                        rentcalc.textContent = "Daily Rent Calculation: " + -1*(rentcostcalc) + "$ / Day.";
+                    }
                 }
-                else{
-                    Rentedpro = false;
-                    rentpro.textContent = "Rent";
-                    rentcostcalc += 100;
-                    rentcalc.textContent = "Daily Rent Calculation: " + -1*(rentcostcalc) + "$ / Day.";
-                }
-
             });
 
             rent.addEventListener('click', function event(){
 
-                if(Rented == false){
-                    RentStartDate = new Date();
-                    Rented = true;
-                    rent.textContent = "Rented!";
-                    credits -= 40;
-                    wallet.textContent = "Wallet: " + credits + "$";
-                    rentcostcalc -= 40;
-                    rentcalc.textContent = "Daily Rent Calculation: " + -1*(rentcostcalc) + "$ / Day.";
+                if(Rentedbasic != true && Rentedpro != true){
+                    if(Rented == false){
+                        RentStartDate = new Date();
+                        Rented = true;
+                        rent.textContent = "Rented!";
+                        rentpro.textContent = "Unavailable";
+                        rentbasic.textContent = "Unavailable";
+                        credits -= 40;
+                        wallet.textContent = "Wallet: " + credits + "$";
+                        rentcostcalc -= 40;
+                        rentcalc.textContent = "Daily Rent Calculation: " + -1*(rentcostcalc) + "$ / Day.";
+                    }
+                    else{
+                        Rented = false;
+                        rentpro.textContent = "Rent";
+                        rent.textContent = "Rent";
+                        rentbasic.textContent = "Rent";
+                        rentcostcalc += 40;
+                        rentcalc.textContent = "Daily Rent Calculation: " + -1*(rentcostcalc) + "$ / Day.";
+                    }
                 }
-                else{
-                    Rented = false;
-                    rent.textContent = "Rent";
-                    rentcostcalc += 40;
-                    rentcalc.textContent = "Daily Rent Calculation: " + -1*(rentcostcalc) + "$ / Day.";
-                }
-
             });
 
             rentbasic.addEventListener('click', function event(){
 
-                if(Rentedbasic == false){
-                    RentbasicStartDate = new Date();
-                    Rentedbasic = true;
-                    rentbasic.textContent = "Rented!";
-                    credits -= 12;
-                    wallet.textContent = "Wallet: " + credits + "$";
-                    rentcostcalc -= 12;
-                    rentcalc.textContent = "Daily Rent Calculation: " + -1*(rentcostcalc) + "$ / Day.";
+                if(Rented != true && Rentedpro != true){
+                    if(Rentedbasic == false){
+                        RentbasicStartDate = new Date();
+                        Rentedbasic = true;
+                        rentbasic.textContent = "Rented!";
+                        rent.textContent = "Unavailable";
+                        rentpro.textContent = "Unavailable";
+                        credits -= 12;
+                        wallet.textContent = "Wallet: " + credits + "$";
+                        rentcostcalc -= 12;
+                        rentcalc.textContent = "Daily Rent Calculation: " + -1*(rentcostcalc) + "$ / Day.";
+                    }
+                    else{
+                        Rentedbasic = false;
+                        rentpro.textContent = "Rent";
+                        rent.textContent = "Rent";
+                        rentbasic.textContent = "Rent";
+                        rentcostcalc += 12;
+                        rentcalc.textContent = "Daily Rent Calculation: " + -1*(rentcostcalc) + "$ / Day.";
+                    }
                 }
-                else{
-                    Rentedbasic = false;
-                    rentbasic.textContent = "Rent";
-                    rentcostcalc += 12;
-                    rentcalc.textContent = "Daily Rent Calculation: " + -1*(rentcostcalc) + "$ / Day.";
-                }
-
             });
 
             const DateAndTime = setInterval(function() {
